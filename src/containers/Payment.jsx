@@ -7,6 +7,9 @@ const Payment = ({ history }) => {
   const { state, addNewOrder } = useContext(AppContext);
   const { cart, buyer } = state;
 
+  // https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap
+  // AIzaSyBl366R7l2Gj2kQrx_VV6LANejdlXhhVzk
+
   const paypalOtions = {
     clientId:
       'ATN4MgsCVKSXinkSTL1YqlANTikW5fXyo5C7TkyVUG7JB0DTr1G2aabkWFF9Uz6kKo61tL48cfWpomc4',
@@ -20,7 +23,6 @@ const Payment = ({ history }) => {
   };
 
   const handlePaymentSuccess = (data) => {
-    console.log(data);
     if (data.status === 'COMPLETED') {
       const newOrder = {
         buyer,
